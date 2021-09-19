@@ -4,11 +4,6 @@ import './index.css';
 
 const rootElement = document.querySelector('#root');
 
-const elem = (
-  <div className="greeting">
-    <h1 className="greeting__title">Hello, World!</h1>
-    <p className="greeting__text">I'm learning React</p>
-  </div>
-);
+const elem = <h1 className="greeting__title">Hello, World!</h1>
 
 ReactDOM.render(elem, rootElement);
