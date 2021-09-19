@@ -1,0 +1,14 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+
+const rootElement = document.querySelector('#root');
+
+const elem = (
+  <div className="greeting">
+    <h1 className="greeting__title">Hello, World!</h1>
+    <p className="greeting__text">I'm learning React</p>
+  </div>
+);
+
+ReactDOM.render(elem, rootElement);
