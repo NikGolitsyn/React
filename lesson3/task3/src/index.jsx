@@ -7,8 +7,7 @@ const rootElement = document.querySelector('#root');
 
 const userInfo = {
   name: 'Tom',
-  avatarUrl:
-    'https://sds',
+  avatarUrl: 'https://sds',
 };
 
 ReactDOM.render(<Comment author={userInfo} text="Good job!" date={new Date()} />, rootElement);
