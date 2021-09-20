@@ -5,8 +5,8 @@ import './userinfo.scss';
 const UserInfo = props => {
   return (
     <div className="user-info">
-      <Avatar avatarUrl={props.user.avatarUrl} name={props.user.name} />
-      <div className="user-info__name">{props.user.name}</div>
+      <Avatar avatarUrl={props.author.avatarUrl} name={props.author.name} />
+      <div className="user-info__name">{props.author.name}</div>
     </div>
   );
 };
