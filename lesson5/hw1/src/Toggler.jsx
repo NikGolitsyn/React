@@ -5,11 +5,11 @@ export default class Toggler extends React.Component {
     super();
   }
 
-  onToggleButton(e) {
-    e.target.textContent === 'On' ? (e.target.textContent = 'Off') : (e.target.textContent = 'On');
-  }
+  // onToggleButton(e) {
+  //   e.target.textContent === 'On' ? (e.target.textContent = 'Off') : (e.target.textContent = 'On');
+  // }
 
   render() {
-    return <button onClick={e => this.onToggleButton(e)}>Off</button>;
+    return <button>Off</button>;
   }
 }
