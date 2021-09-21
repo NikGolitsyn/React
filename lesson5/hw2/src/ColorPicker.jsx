@@ -9,14 +9,17 @@ export default class ColorPicker extends React.Component {
     super();
     this.state = {
       colorName: '',
-      hovered: false,
     };
   }
-  btnHovered = (colorName) => {
-    document.querySelector('.picker__title').textContent = colorName;
+  btnHovered = colorName => {
+    this.setState({
+      colorName: colorName,
+    });
   };
   btnUnhovered = () => {
-    document.querySelector('.picker__title').textContent = '';
+    this.setState({
+      colorName: '',
+    });
   };
 
   render() {
