@@ -1,10 +1,10 @@
 import React from 'react';
-import Toggle from './Toggle';
+import Toggler from './Toggler';
 
 export default props => {
   return (
     <>
-      <Toggle />
+      <Toggler />
     </>
   );
 };

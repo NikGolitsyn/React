@@ -5,11 +5,11 @@ export default class Toggle extends React.Component {
     super();
   }
 
-  ToggleButton(e) {
+  onToggleButton(e) {
     e.target.textContent === 'On' ? (e.target.textContent = 'Off') : (e.target.textContent = 'On');
   }
 
   render() {
-    return <button onClick={e => this.ToggleButton(e)}>Off</button>;
+    return <button onClick={e => this.onToggleButton(e)}>Off</button>;
   }
 }
