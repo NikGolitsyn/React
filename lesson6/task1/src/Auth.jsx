@@ -20,14 +20,16 @@ export default class Auth extends React.Component {
   };
 
   render() {
+    let button;
+    if(!this.state.isLoggedIn) {
+      button = <Login onLogin={this.onLogin} />
+    } else {
+      button = <Logout onLogout={this.onLogout} />;
+    }
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
-          {this.state.isLoggedIn ? (
-            <Logout onLogout={this.onLogout} />
-          ) : (
-            <Login onLogin={this.onLogin} />
-          )}
+       <div>{button}</div>
       </div>
     );
   }
