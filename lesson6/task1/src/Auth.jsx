@@ -23,12 +23,12 @@ export default class Auth extends React.Component {
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
-        {!this.state.isLoggedIn ? (
-          <Login onLogin={this.onLogin} />
-        ) : (
+        {this.state.isLoggedIn ? (
           <Logout onLogout={this.onLogout} />
-        )}
-      </div>
+          ) : (
+            <Login onLogin={this.onLogin} />
+            )}
+            </div>
     );
   }
 }
