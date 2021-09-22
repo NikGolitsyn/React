@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default ({ func }) => {
+export default ({ onLogin }) => {
   return (
-    <button className="login btn" onClick={func}>
+    <button className="login btn" onClick={onLogin}>
       Login
     </button>
   );
