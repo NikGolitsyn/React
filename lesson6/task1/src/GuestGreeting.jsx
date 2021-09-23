@@ -1,5 +1,7 @@
 import React from 'react';
 
-export default () => {
+const GuestGreeting = () => {
   return <h1>Hi stranger. Please login 🚀</h1>;
 };
+
+export default GuestGreeting;

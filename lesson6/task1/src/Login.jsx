@@ -1,9 +1,11 @@
 import React from 'react';
 
-export default ({ onLogin }) => {
+const Login = ({ onLogin }) => {
   return (
     <button className="login btn" onClick={() => onLogin()}>
       Login
     </button>
   );
 };
+
+export default Login;
