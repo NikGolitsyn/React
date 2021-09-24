@@ -24,8 +24,8 @@ class Page extends React.Component {
         <button className="btn" onClick={() => this.setText('Hello, world!')}>
           Hello text
         </button>
-        <button className="btn" onClick={() => this.setText('Another exciting text')}>
-          Another exciting text.
+        <button className="btn" onClick={() => this.setText('Another exciting text.')}>
+          Another text
         </button>
         <button className="btn" onClick={() => this.setText(null)}>
           Reset text
