@@ -6,10 +6,6 @@ export default class Online extends React.Component {
   }
 
   render() {
-    return (
-      <div className="status">
-        <span className="status__text">All good!</span>
-      </div>
-    );
+    return <span className="status__text">All good!</span>;
   }
 }
