@@ -13,18 +13,13 @@ body {
   align-items: center;
 }
 
-.panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+$blue: #6495ed;
 
-.login {
-  background-color: green;
-}
-
-.logout {
-  background-color: cornflowerblue;
+.message {
+  border: 2px solid $blue;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 16px;
 }
 
 .btn {
@@ -37,4 +32,6 @@ body {
   text-transform: uppercase;
   padding: 8px;
   cursor: pointer;
+  background-color: $blue;
+  margin: 8px;
 }
