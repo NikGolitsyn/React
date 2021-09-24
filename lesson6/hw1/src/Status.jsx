@@ -5,10 +5,15 @@ import Online from './Online';
 class Status extends React.Component {
   state = {
     isOnline: true,
+    isOffline: false,
   };
 
   render() {
-    return <>{this.state.isOnline ? <Online /> : <Offline />}</>;
+    return (
+      <>
+        {this.state.isOnline && <Online />} {this.state.isOffline && <Offline />}
+      </>
+    );
   }
 }
 
