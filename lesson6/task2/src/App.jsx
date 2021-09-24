@@ -1,10 +1,10 @@
 import React from 'react';
-import ColorPicker from './ColorPicker';
+import MailBox from './MailBox';
 
 export default props => {
   return (
     <>
-      <ColorPicker />
+      <MailBox unreadMessages={[]} />
     </>
   );
 };
