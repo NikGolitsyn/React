@@ -10,7 +10,7 @@ const Transaction = ({ time, from, to, rate, amount }) => {
       <span className="transaction__date">{formatDayMonth(time)}</span>
       <span className="transaction__time">{formatHourMinutes(time)}</span>
       <span className="transaction__assets">
-        {from} 🠖 {to}
+        {from} → {to}
       </span>
       <span className="transaction__rate">{rate}</span>
       <span className="transaction__amount">{new Intl.NumberFormat('en-GB').format(amount)}</span>
