@@ -17,15 +17,15 @@ class ConnectionStatus extends React.Component {
     });
   };
 
-  componentDidMount() {
-    window.addEventListener('online', this.Toggle);
-    window.addEventListener('offline', this.Toggle);
-  }
+  // componentDidMount() {
+  //   window.addEventListener('online', this.Toggle);
+  //   window.addEventListener('offline', this.Toggle);
+  // }
 
-  componentWillUnmount() {
-    window.removeEventListener('online', this.Toggle);
-    window.removeEventListener('offline', this.Toggle);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('online', this.Toggle);
+  //   window.removeEventListener('offline', this.Toggle);
+  // }
 
   render() {
     return (
