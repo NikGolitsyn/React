@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Life from './Life';
+import App from './App';
 
 const rootElement = document.querySelector('#root');
 
-const number = 11;
+const date = new Date();
 
-ReactDOM.render(<Life number={number} />, rootElement);
+ReactDOM.render(<App date={date} />, rootElement);
