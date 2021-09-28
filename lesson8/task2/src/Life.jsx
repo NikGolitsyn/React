@@ -6,6 +6,7 @@ class Life extends React.Component {
     console.log(`constructor: good place to create state`);
     this.state = {
       number: this.props.number,
+      visable: true,
     };
   }
 
@@ -29,12 +30,12 @@ class Life extends React.Component {
 
   componentWillUnmount() {
     clearInterval(this.interval);
-    console.log(`cleanup before DOM related to component will be removed`);
+    console.log('componentWillUnmount(): cleanup before DOM related to component will be removed');
   }
 
   render() {
     console.log(`return React element to build DOM`);
-    return <h1 className="login btn">{this.state.number}</h1>;
+    return <>{this.state.visable && <button className="login btn">{this.state.number}</button>}</>;
   }
 }
 
