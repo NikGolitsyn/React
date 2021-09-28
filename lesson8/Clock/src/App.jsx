@@ -1,5 +1,5 @@
 import React from 'react';
-import Life from './Life';
+import Clock from './Clock';
 
 class App extends React.Component {
   constructor() {
@@ -17,12 +17,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <button className="btn logout" onClick={this.onToggle}>
           Success
         </button>
-        {this.state.visable && <Life date={this.props.date} toggle={this.onToggle} />}
-      </div>
+        {this.state.visable && <Clock location="New York" offset={-5} />}
+        {this.state.visable && <Clock location="London" offset={0} />}
+        {this.state.visable && <Clock location="Kyiv" offset={2} />}
+      </>
     );
   }
 }

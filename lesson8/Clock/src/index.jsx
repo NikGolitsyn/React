@@ -5,6 +5,4 @@ import App from './App';
 
 const rootElement = document.querySelector('#root');
 
-const date = new Date();
-
-ReactDOM.render(<App date={date} />, rootElement);
+ReactDOM.render(<App />, rootElement);
