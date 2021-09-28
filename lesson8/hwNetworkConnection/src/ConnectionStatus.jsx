@@ -17,21 +17,21 @@ class ConnectionStatus extends React.Component {
     });
   };
 
-  // componentDidMount() {
-  //   window.addEventListener('online', this.Toggle);
-  //   window.addEventListener('offline', this.Toggle);
-  // }
+  componentDidMount() {
+    window.addEventListener('online', this.Toggle);
+    window.addEventListener('offline', this.Toggle);
+  }
 
-  // componentWillUnmount() {
-  //   window.removeEventListener('online', this.Toggle);
-  //   window.removeEventListener('offline', this.Toggle);
-  // }
+  componentWillUnmount() {
+    window.removeEventListener('online', this.Toggle);
+    window.removeEventListener('offline', this.Toggle);
+  }
 
   render() {
     return (
       <>
-        {this.state.online && <div className="status">Online</div>}
-        {this.state.offline && <div className="status status_offline">Offline</div>}
+        {this.state.online && <div className="status">online</div>}
+        {this.state.offline && <div className="status status_offline">offline</div>}
       </>
     );
   }
