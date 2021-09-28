@@ -5,6 +5,6 @@ import Life from './Life';
 
 const rootElement = document.querySelector('#root');
 
-const date = new Date();
+const number = 1;
 
-ReactDOM.render(<Life date={date} />, rootElement);
+ReactDOM.render(<Life number={number} />, rootElement);

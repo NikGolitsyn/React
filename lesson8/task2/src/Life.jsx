@@ -5,17 +5,16 @@ class Life extends React.Component {
     super(props);
     console.log(`constructor: good place to create state`);
     this.state = {
-      date: this.props.date,
-      visable: true,
+      number: this.props.number,
     };
   }
 
   componentDidMount() {
     this.interval = setInterval(() => {
       this.setState({
-        date: new Date(),
+        number: this.state.number + 1,
       });
-    }, 1000);
+    }, 2000);
     console.log(`componentDidMount: API calls, subscriptions`);
   }
 
@@ -35,7 +34,7 @@ class Life extends React.Component {
 
   render() {
     console.log(`return React element to build DOM`);
-    return <h1 className="login btn">{this.state.date.toLocaleTimeString()}</h1>;
+    return <h1 className="login btn">{this.state.number}</h1>;
   }
 }
 
