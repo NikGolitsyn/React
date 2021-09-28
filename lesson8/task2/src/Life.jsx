@@ -5,7 +5,7 @@ class Life extends React.Component {
     super(props);
     console.log(`constructor: good place to create state`);
     this.state = {
-      number: this.props.number,
+      date: this.props.date,
       visable: true,
     };
   }
@@ -13,9 +13,9 @@ class Life extends React.Component {
   componentDidMount() {
     this.interval = setInterval(() => {
       this.setState({
-        number: this.state.number + 1,
+        date: new Date(),
       });
-    }, 2000);
+    }, 1000);
     console.log(`componentDidMount: API calls, subscriptions`);
   }
 
@@ -30,12 +30,12 @@ class Life extends React.Component {
 
   componentWillUnmount() {
     clearInterval(this.interval);
-    console.log('componentWillUnmount(): cleanup before DOM related to component will be removed');
+    console.log(`cleanup before DOM related to component will be removed`);
   }
 
   render() {
     console.log(`return React element to build DOM`);
-    return <>{this.state.visable && <button className="login btn">{this.state.number}</button>}</>;
+    return <h1 className="login btn">{this.state.date.toLocaleTimeString()}</h1>;
   }
 }
 
