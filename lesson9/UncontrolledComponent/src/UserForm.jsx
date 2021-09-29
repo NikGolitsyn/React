@@ -1,17 +1,17 @@
 import React from 'react';
 
 export default class UserForm extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   setRef = node => {
     this.formRef = node;
   };
 
   render() {
+    const { onSubmit } = this.props;
     return (
-      <form
-        ref={this.setRef}
-        className="login-form"
-        onSubmit={() => this.props.onSubmit(this.formRef)}
-      >
+      <form ref={this.setRef} className="login-form" onSubmit={() => onSubmit(this.formRef)}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
@@ -40,7 +40,7 @@ export default class UserForm extends React.Component {
           <label className="form-label" id="about" htmlFor="about">
             About
           </label>
-          <textarea name="about" className="form-input" />
+          <textarea name="about" className="form-input"></textarea>
         </div>
         <button className="submit-button" type="submit">
           Submit
