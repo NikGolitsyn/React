@@ -4,14 +4,23 @@ export default class UserForm extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const formDate = [...new FormData(this.formRef)].reduce(
+      (acc, [name, value]) => ({ ...acc, [name]: value }),
+      {},
+    );
+    return this.props.onSubmit(formDate);
+  };
+
   setRef = node => {
     this.formRef = node;
   };
 
   render() {
-    const { onSubmit } = this.props;
     return (
-      <form ref={this.setRef} className="login-form" onSubmit={() => onSubmit(this.formRef)}>
+      <form ref={this.setRef} className="login-form" onSubmit={this.handleSubmit}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
