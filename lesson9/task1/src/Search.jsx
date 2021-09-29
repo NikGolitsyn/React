@@ -8,30 +8,28 @@ export default class Search extends React.Component {
     };
   }
 
-  handleChange = e => {
-    // останавливает React от сброса свойств обьекта события
-    e.persist();
+  handleChange = event => {
     this.setState({
-      value: e.target.value,
+      value: event.target.value,
     });
   };
 
-  search = e => {
-    e.preventDefault();
+  search = event => {
     alert(`Search text: ${this.state.value}`);
+    event.preventDefault();
   };
 
   render() {
     return (
       <>
-        <form className="search">
+        <form className="search" onSubmit={this.search}>
           <input
             type="text"
             onChange={this.handleChange}
             value={this.state.value}
             className="search__input"
           />
-          <button onClick={this.search} className="search__button" type="submit">
+          <button className="search__button" type="submit">
             Search
           </button>
         </form>
