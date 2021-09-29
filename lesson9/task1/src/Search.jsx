@@ -18,7 +18,7 @@ export default class Search extends React.Component {
 
   search = e => {
     e.preventDefault();
-    console.log(this.state.value);
+    alert(`Search text: ${this.state.value}`);
   };
 
   render() {
