@@ -5,7 +5,6 @@ class ConnectionStatus extends React.Component {
     super(props);
     this.state = {
       online: true,
-      offline: false,
     };
   }
 
@@ -13,7 +12,6 @@ class ConnectionStatus extends React.Component {
     const { onLine } = e.target.navigator;
     this.setState({
       online: onLine,
-      offline: !onLine,
     });
   };
 
@@ -30,8 +28,11 @@ class ConnectionStatus extends React.Component {
   render() {
     return (
       <>
-        {this.state.online && <div className="status">online</div>}
-        {this.state.offline && <div className="status status_offline">offline</div>}
+        {this.state.online ? (
+          <div className="status">online</div>
+        ) : (
+          <div className="status status_offline">offline</div>
+        )}
       </>
     );
   }
