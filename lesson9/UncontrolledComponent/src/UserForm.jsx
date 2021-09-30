@@ -1,10 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class UserForm extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleSubmit = event => {
     event.preventDefault();
     const formDate = [...new FormData(this.formRef)].reduce(
@@ -57,4 +54,8 @@ export default class UserForm extends React.Component {
       </form>
     );
   }
+}
+
+UserForm.propTypes = {
+  onSubmit: PropTypes.function.isRequired
 }

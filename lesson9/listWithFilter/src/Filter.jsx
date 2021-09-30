@@ -1,10 +1,6 @@
 import React from 'react';
 
 class Filter extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { count, filterText, onChange } = this.props;
     return (
