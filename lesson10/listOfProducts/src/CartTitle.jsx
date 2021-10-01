@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CardTitle = ({ userName, count }) => {
+const CartTitle = ({ userName, count }) => {
   return (
     <div className="cart-title">
       {userName}, you added {count} items
@@ -8,4 +8,4 @@ const CardTitle = ({ userName, count }) => {
   );
 };
 
-export default CardTitle;
+export default CartTitle;
