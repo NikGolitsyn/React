@@ -6,7 +6,6 @@ export default class App extends React.Component {
   state = {
     userData: null,
   };
-
   componentDidMount() {
     this.fetchUserData(this.props.userId);
   }
