@@ -1,5 +1,5 @@
 import React from 'react';
-import CardTitle from './CardTitle';
+import CartTitle from './CartTitle';
 import ProductsList from './ProductsList';
 
 export default class ShoppingCart extends React.Component {
@@ -23,7 +23,7 @@ export default class ShoppingCart extends React.Component {
 
     return (
       <div className="column">
-        <CardTitle userName={this.props.userName} count={count} />
+        <CartTitle userName={this.props.userName} count={count} />
         <ProductsList cartItems={this.state.cartItems} />
       </div>
     );
