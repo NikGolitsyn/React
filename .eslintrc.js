@@ -18,7 +18,9 @@ module.exports = {
     'import/extensions': 0,
     'import/prefer-default-export': 0,
     'no-console': 0,
-    'react/prop-types': 0,
+    'react/prop-types': 1,
     'global-require': 0,
+    'import/no-unresolved': 0,
+    'no-restricted-globals': 0,
   },
 };
