@@ -56,6 +56,6 @@ export default class UserForm extends React.Component {
   }
 }
 
-UserForm.propTypes = {
-  onSubmit: PropTypes.function.isRequired
-}
+// UserForm.propTypes = {
+//   onSubmit: PropTypes.func.isRequired
+// }

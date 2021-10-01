@@ -21,6 +21,6 @@ module.exports = {
     'react/prop-types': 1,
     'global-require': 0,
     'import/no-unresolved': 0,
-    'no-restricted-globals': 0,
+    'no-restricted-globals': 1,
   },
 };
