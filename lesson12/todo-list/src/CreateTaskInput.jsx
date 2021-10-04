@@ -25,7 +25,7 @@ class CreateTaskInput extends React.Component {
           className="create-task__input"
           onChange={this.handleChange}
         />
-        <button className="btn" onClick={this.handleCreateTask}>
+        <button className="btn create-task__btn" onClick={this.handleCreateTask}>
           Create
         </button>
       </div>

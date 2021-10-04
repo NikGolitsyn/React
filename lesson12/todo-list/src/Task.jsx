@@ -8,7 +8,7 @@ const Task = ({ text, done, onChange, id, onDelete }) => {
     <li className={listItemClasses}>
       <input
         type="checkbox"
-        className="list-item-checkbox"
+        className="list-item__checkbox"
         defaultChecked={done}
         onChange={() => onChange(id)}
       />
