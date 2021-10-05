@@ -30,7 +30,6 @@ class User extends React.Component {
 
   componentDidMount() {
     window.addEventListener('click', this.changeHandler);
-    this.fetchUser(this.props.match.params.userId);
   }
 
   componentWillUnmount() {
@@ -43,7 +42,7 @@ class User extends React.Component {
     if (!userData) {
       return null;
     }
-
+    console.log(this.props.match.params.userId);
     const { avatar_url, location, name } = userData;
 
     return (
