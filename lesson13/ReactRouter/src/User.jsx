@@ -24,6 +24,10 @@ class User extends React.Component {
     });
   };
 
+  shouldComponentUpdate(nextProps) {
+    return nextProps.match.params.userId === this.props.match.params.userId;
+  }
+
   componentDidMount() {
     window.addEventListener('click', this.changeHandler);
     this.fetchUser(this.props.match.params.userId);
