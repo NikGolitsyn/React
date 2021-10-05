@@ -5,7 +5,6 @@ class User extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: this.props.match.params.userId,
       userData: null,
     };
   }
@@ -14,10 +13,11 @@ class User extends React.Component {
     if (!e.target.closest('li')) {
       return;
     }
-    this.setState({
-      userId: this.props.match.params.userId,
-    });
-    getUser(this.state.userId).then(body => {
+    this.fetchUser();
+  };
+
+  fetchUser = () => {
+    getUser(this.props.match.params.userId).then(body => {
       this.setState({
         userData: body,
       });
@@ -26,13 +26,8 @@ class User extends React.Component {
 
   componentDidMount() {
     window.addEventListener('click', this.changeHandler);
-    getUser(this.state.userId).then(body => {
-      this.setState({
-        userData: body,
-      });
-    });
+    this.fetchUser(this.props.match.params.userId);
   }
-
 
   componentWillUnmount() {
     window.removeEventListener('click', this.changeHandler);
@@ -44,6 +39,7 @@ class User extends React.Component {
     if (!userData) {
       return null;
     }
+
     const { avatar_url, location, name } = userData;
 
     return (
