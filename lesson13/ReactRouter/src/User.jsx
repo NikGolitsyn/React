@@ -1,27 +1,61 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { getUser } from './userGateway';
 
-const User = () => {
-  const { userId } = useParams();
-  return (
-    <div className="user">
-      <img
-        alt="User Avatar"
-        src={
-          userId === 'github'
-            ? 'https://avatars1.githubusercontent.com/u/9919?v=4'
-            : 'https://avatars.githubusercontent.com/u/69631?v=4'
-        }
-        className="user__avatar"
-      />
-      <div className="user__info">
-        <span className="user__name">{userId === 'github' ? 'GitHub' : 'Facebook'}</span>
-        <span className="user__location">
-          {userId === 'github' ? 'San Francisco,CA' : 'Menlo Park, California'}
-        </span>
+class User extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userId: this.props.match.params.userId,
+      userData: null,
+    };
+  }
+
+  changeHandler = e => {
+    if (!e.target.closest('li')) {
+      return;
+    }
+    this.setState({
+      userId: this.props.match.params.userId,
+    });
+    getUser(this.state.userId).then(body => {
+      this.setState({
+        userData: body,
+      });
+    });
+  };
+
+  componentDidMount() {
+    window.addEventListener('click', this.changeHandler);
+    getUser(this.state.userId).then(body => {
+      this.setState({
+        userData: body,
+      });
+    });
+  }
+
+
+  componentWillUnmount() {
+    window.removeEventListener('click', this.changeHandler);
+  }
+
+  render() {
+    const { userData } = this.state;
+
+    if (!userData) {
+      return null;
+    }
+    const { avatar_url, location, name } = userData;
+
+    return (
+      <div className="user">
+        <img alt="User Avatar" src={avatar_url} className="user__avatar" />
+        <div className="user__info">
+          <span className="user__name">{name}</span>
+          <span className="user__location">{location}</span>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default User;
