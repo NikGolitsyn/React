@@ -22,5 +22,5 @@ const User = ({ userData }) => {
 export default User;
 
 User.propTypes = {
-  userData: PropTypes.object.isRequired,
+  userData: PropTypes.object,
 };
