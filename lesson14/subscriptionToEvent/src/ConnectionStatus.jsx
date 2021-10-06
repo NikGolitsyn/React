@@ -18,9 +18,9 @@ const ConnectionStatus = () => {
   });
 
   const result = isOnline ? (
-    <div className="status">Online</div>
+    <div className="status">online</div>
   ) : (
-    <div className="status status_offline">Offline</div>
+    <div className="status status_offline">offline</div>
   );
 
   return result;
