@@ -17,11 +17,11 @@ const App = () => (
           </li>
         </ul>
         <Switch>
-          <Route exact path="/users">
-            <span>Select a user please</span>
-          </Route>
           <Route path="/users/:userId">
             <User />
+          </Route>
+          <Route path="/">
+            <span>Select a user please</span>
           </Route>
         </Switch>
       </div>
