@@ -21,7 +21,7 @@ const Dimensions = () => {
   const { width, height } = dimensions;
 
   return (
-    <div className="dimensions">
+    <div>
       {width}px - {height}px
     </div>
   );
