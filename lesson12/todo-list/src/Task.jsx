@@ -2,6 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+Promise.reject(new Error('провал')).then(response => console.log(response.status));
+
 const Task = ({ text, done, onChange, id, onDelete }) => {
   const listItemClasses = classNames('list-item', { 'list-item_done': done });
   return (

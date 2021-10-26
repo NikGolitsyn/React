@@ -7,7 +7,6 @@ class UsersList extends React.Component {
     super();
     this.state = {
       currentPage: 1,
-      itemsPerPage: 3,
     };
   }
 
@@ -24,7 +23,8 @@ class UsersList extends React.Component {
   };
 
   render() {
-    const { currentPage, itemsPerPage } = this.state;
+    const { itemsPerPage } = this.props;
+    const { currentPage } = this.state;
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
