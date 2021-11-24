@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-import User from './User';
+import User from './User.jsx';
 
 const Users = () => (
   <div className="page__content">
