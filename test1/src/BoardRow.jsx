@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import Square from './Square.jsx';
 import { Columns } from './utils/data.utils';
 
-const BoardRow = ({ dataSet, setHoverSquares, gameStart, styles }) => (
+const BoardRow = ({ dataSet, setHoverSquares, gameStart, numberOfFields }) => (
   <div className="board-row" data-id={dataSet}>
-    {Columns.map((id, index) => (
+    {Columns(numberOfFields).map((id, index) => (
       <Square
         key={id}
         dataSet={index + 1}
         setHoverSquares={setHoverSquares}
-        styles={styles}
         gameStart={gameStart}
       />
     ))}
@@ -23,5 +22,5 @@ BoardRow.propTypes = {
   dataSet: PropTypes.number.isRequired,
   setHoverSquares: PropTypes.func.isRequired,
   gameStart: PropTypes.bool.isRequired,
-  styles: PropTypes.object,
+  numberOfFields: PropTypes.number.isRequired,
 };

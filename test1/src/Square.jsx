@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Square = ({ dataSet, setHoverSquares, gameStart, styles }) => {
+const Square = ({ dataSet, setHoverSquares, gameStart }) => {
   const [hover, setHover] = useState(false);
 
   const getInfo = event => {
@@ -18,7 +18,6 @@ const Square = ({ dataSet, setHoverSquares, gameStart, styles }) => {
     <div
       className={`square ${hover && 'blue-hover'}`}
       data-id={dataSet}
-      style={styles}
       onMouseEnter={getInfo}
     ></div>
   );
@@ -30,5 +29,4 @@ Square.propTypes = {
   dataSet: PropTypes.number.isRequired,
   setHoverSquares: PropTypes.func.isRequired,
   gameStart: PropTypes.bool.isRequired,
-  styles: PropTypes.object,
 };

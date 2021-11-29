@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BoardRow from './BoardRow.jsx';
 import Form from './Form.jsx';
-import { Rows, getSize } from './utils/data.utils.js';
+import { Rows } from './utils/data.utils.js';
 import HoverSquares from './HoverSquares.jsx';
 import { getData } from './gateway.js';
 
@@ -11,15 +11,11 @@ const App = () => {
   const [gameStart, setGameStart] = useState(false);
   const [hoverSquares, setHoverSquares] = useState([]);
 
-
   useEffect(() => {
     getData().then(data => setStore(data));
   }, []);
 
   if (!store) return null;
-  const gameMode = Object.keys(store);
-  const fieldsSize = Object.values(store)
-
 
   const hoverSquaresHandler = (column, row) => {
     if (hoverSquares.some(el => el.id === column + row)) {
@@ -27,6 +23,8 @@ const App = () => {
     }
     return setHoverSquares(hoverSquares.concat({ id: column + row, column, row }));
   };
+
+  const numberOfFields = value === 'pick mode' ? 5 : Number(value);
 
   return (
     <div className="main-container">
@@ -37,15 +35,15 @@ const App = () => {
             value={value}
             setValue={setValue}
             gameStart={gameStart}
-            gameMode={gameMode}
+            gameMode={store}
           />
-          {Rows.map((id, index) => (
+          {Rows(numberOfFields).map((id, index) => (
             <BoardRow
               key={id}
+              numberOfFields={numberOfFields}
               dataSet={index + 1}
               setHoverSquares={hoverSquaresHandler}
               gameStart={gameStart}
-              styles={getSize(value, fieldsSize)}
             />
           ))}
         </div>

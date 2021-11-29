@@ -11,9 +11,9 @@ const Form = ({ setGameStart, gameStart, value, setValue, gameMode }) => {
     <form className="status" onSubmit={handleSubmit}>
       <select className="select" value={value} onChange={e => setValue(e.target.value)}>
         <option value="pick mode">pick mode</option>
-        <option value={gameMode[0]}>Easy mod</option>
-        <option value={gameMode[1]}>Medium mod</option>
-        <option value={gameMode[2]}>Hard mod</option>
+        <option value={gameMode.easyMode.field}>Easy mode</option>
+        <option value={gameMode.normalMode.field}>Normal mode</option>
+        <option value={gameMode.hardMode.field}>Hard mode</option>
       </select>
       {gameStart ? (
         <button className="start-btn" type="submit">
@@ -35,5 +35,5 @@ Form.propTypes = {
   gameStart: PropTypes.bool.isRequired,
   value: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired,
-  gameMode: PropTypes.array.isRequired,
+  gameMode: PropTypes.object.isRequired,
 };
